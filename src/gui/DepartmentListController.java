@@ -62,7 +62,8 @@ public class DepartmentListController implements Initializable {
 		initializeNodes();
 
 	}
-
+	
+ 
 	private void initializeNodes() {
 
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -89,6 +90,7 @@ public class DepartmentListController implements Initializable {
 
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
